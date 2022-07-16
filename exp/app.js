@@ -3,12 +3,16 @@ const app = express()
 const adminRoutes = require('./routes/admin')
 const cookieParse = require('cookie-parser')
 
+//app.use(express.static('public'))
+app.use('/static',express.static('public'))
+
 app.use(express.json())
 app.use(cookieParse())
 
 //Middleware 
 app.use((req, res, next)=>{
     console.log('Running Middleware')
+    //console.log(req)
     return next()
 })
 
