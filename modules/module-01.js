@@ -4,10 +4,12 @@ const hide = () => {
     console.log('Running hide func')
 }
 
-module.exports.exec = () => {
+exec = () => {
     console.log('Running func exec')
 }
-module.exports.welcome = 'Welcome to module-01.js'
+welcome = 'Welcome to module-01.js'
+
+module.exports = {exec, welcome}
 
 //REPL
 //use node on console
