@@ -32,6 +32,17 @@ app.get('/',(req, res)=>{
 
 app.use('/admin', adminRoutes)
 
+app.get('/error',(req, res, next)=>{
+    setImmediate(()=>{
+        next(new Error('Erro endpoint /error'))
+    })
+})
+
+app.use((err, req, res, next)=> {
+    console.log(err.stack)
+    res.status(500).json({message: err.message})
+})
+
 app.listen(3000, () => {
     console.log('Server express running: http://localhost:3000')
 })

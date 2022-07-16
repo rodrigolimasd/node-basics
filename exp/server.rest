@@ -14,3 +14,5 @@ Content-Type: application/json
 GET http://localhost:3000/setcookie
 ### get cookie
 GET http://localhost:3000/getcookie
+### get error
+GET http://localhost:3000/error
