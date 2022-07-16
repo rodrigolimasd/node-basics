@@ -1,7 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/:id',(req, res)=>{
+function logReq(req, res, next){
+    console.log('Running Middleware admin')
+    return next()
+}
+
+router.get('/:id', logReq,(req, res)=>{
     res.send('admin with id: '+req.params.id)
 })
 

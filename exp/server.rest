@@ -10,3 +10,7 @@ Content-Type: application/json
     "login":"rodrigo",
     "password":"12345"
 }
+### set cookie
+GET http://localhost:3000/setcookie
+### get cookie
+GET http://localhost:3000/getcookie
