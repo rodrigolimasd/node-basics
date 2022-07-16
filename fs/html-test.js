@@ -1,0 +1,27 @@
+const http = require("http")
+const {readFile} = require('fs')
+
+const host = "127.0.0.1"
+const port = 3000
+const url =  `http://${host}:${port}/`
+
+let content = ''
+
+readFile('index.html',(err, data)=>{
+    if(err) throw err
+    content = data
+})
+
+const server = http.createServer((req, res)=> {
+    res.statusCode = 200;
+    res.setHeader('Content-Type','text/html')
+    res.end(content)
+})
+
+server.listen(port, host, ()=> {
+    console.log(`Server running at ${url}`)
+})
+
+const open = (process.platform == 'darwin' ? 'open' : process.platform == 'win32' ? 'start' : 'xdg-open' )
+//open default browser
+require('child_process').exec(open + ' ' + url)
