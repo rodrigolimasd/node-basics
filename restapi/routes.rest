@@ -1,0 +1,12 @@
+### get subscribers
+GET http://localhost:3000/subscribers
+### 
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+    "userName": "Rodrigo Lima",
+    "userChannel": "rodtech Channel"
+}
+### get subscribers by id
+GET http://localhost:3000/subscribers/62d48ae284a6bd288b889269
