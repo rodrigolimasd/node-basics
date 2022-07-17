@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mongodbserv:
+    image: mongo:5.0.3
+    container_name: mongodbserv
+    hostname: mongodbserv
+    ports:
+      - "37017:27017"
+    networks:
+      - formy
+networks:
+  formy:
+    driver: bridge
